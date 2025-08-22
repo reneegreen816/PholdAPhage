@@ -99,18 +99,22 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
 **<mark>STEP 2 - Simulate your phage structure in ChimeraX</mark>**
 
-1. Download the attached _pythonscript.py_ to your computer
-2. Open ChimeraX
-3. In the command line type run script _open_pdb.py_
+1. Download the attached _script.cxc_ to your desktop
+2. Open _script.cxc_ in terminal and update/save your parameters
+5. Run script through:
+   -  terminal by typing --script ~/Desktop/script.cxc
+   -  ChimeraX by command line runscript _script.cxc_
 
-To include more proteins in the simulation:
-1. In the command line type _open name.pdb_ (where _open name_ is the name of your file)
-2. Move and place the newly loaded protein on your hkcage structure using ChimeraX _right mouse tools_
-3. Run another _Sym_ command _sym #x #y i,222_ where:
-   - x = the protein model ID,
-   - y = the hkcage model ID,
-   - _i_ indicates the icosahedral symmetry,
-   - and _222_ syms it to the two-fold symmetry axes X, Y, and Z.
+To include more proteins in the simulation.
+
+With the simulation still open:
+1. type _open name.pdb_ in the command line (where _open name_ is the name of your file)
+2. Move and place the new protein on your hkcage where you require it using ChimeraX _right mouse tools_
+3. Run another _Sym_ command by typing _sym #x #y i,222_ where:
+   - x = the protein models ID,
+   - y = the hkcage models ID,
+   - _i_ indicates the symmetry type (i being icosahedral),
+   - and _222_ syms it as two-fold symmetry on the X, Y, and Z axis.
    For more options go see [ChimeraX Sym command page](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/sym.html).
 <br><br>
 
