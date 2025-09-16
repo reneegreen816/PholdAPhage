@@ -57,7 +57,7 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
   Figure 2: Casper-Klug formula for viral symmetry to determine T-number and capsid protein number. The Theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape.
 </p>
 <br><br>
-Example: A phage genome length of ~5,000bps, by research indicates a phage capsid T# of 1. A T#=1 capsid incorporates 60 major capsid proteins simulated across the capsid structure. hkcage parameters would be  _(h, k)_ as (1, 0) for T#(1,0) =_1_^2 + _1x0_ +_0_^2 = 1. More information at [viral zone](https://viralzone.expasy.org/8577).
+Example: A phage genome length of ~5,000bps, by research indicates a phage capsid T# of 1. A T#=1 capsid incorporates 60 major capsid proteins simulated across the capsid structure. hkcage parameters would be (h, k) as (1, 0) for T# (1,0)=1^2 + 1x0 + 0^2 = 1. More infromation at [Viral Zone](https://viralzone.expasy.org/8577)
 <br><br>
 
 <h2>Brief overview</h2>
@@ -67,46 +67,36 @@ Example: A phage genome length of ~5,000bps, by research indicates a phage capsi
 <img width=100% height=auto alt="image" src="https://github.com/user-attachments/assets/391993b5-6674-49e5-891c-766dc3367faa" />
 <br><br>-->
 <img width=100% height=auto alt="image" src="https://github.com/user-attachments/assets/73cbb970-c9e8-4f32-a47d-26bcb74b4c97" />
-<br><br>
-
-Genome length is proportional to capsid size for DNA packaging. 
+<br><br> 
 
 Using the Casper-Klug (CK) Theory of viral symmetry:
-- Step 1: defines your phage's capsid triangulation number (T#) by the Genome-to-T-number model. 
-- Step 2: takes your T# and it's _(h, k)_ parameters to simulate the correct protein copy number across a phage capsid structure in ChimeraX using the sym tool for mathematical automoation and precision. 
+- Step 1: defines your phage's capsid triangulation number (T#) by the Genome-to-T-number model, with Genome length is proportional to capsid size for DNA packaging.
+- Step 2: takes your T# and it's (h, k) parameters to simulate the protein copy number across a phage capsid structure in ChimeraX, using it's sym automation tool using inbuilt mathematical formulae. 
 <br><br>
 
 <h2>How to simulate your unknown phage</h2>
 
 **<mark>Pre-simulation needs</mark>**
-- You will need to know you phage genome length
-- You will need your phage genome annotated and proteins folded for use. To do this, visit Pharokka, Phyntenny and AlphaFold2.
+- You will need to know you phage genome length.
+- You will need your phage genome annotated, and proteins folded, for use. To do this, visit [Phold](https://github.com/gbouras13/phold), [Phyntenny](https://github.com/susiegriggo/Phynteny), and [ColabFold](https://github.com/sokrypton/ColabFold).
 - Have downloaded ChimeraX to your working computer. 
 <br><br>
 
 **<mark>STEP 1 - Define your unknown phage T# and protein copy number</mark>**
 
-1. Define T-number (T#)
+1. Define your T-number (T#)
 
    Use your genome length (in bps) to determine your T#. If you know your phage capsid diameter, this can also help. To determine your phages T# you can start with the following links:
 
    - [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pmc.ncbi.nlm.nih.gov/articles/PMC7762592/)
    - link 2
-   - link 3
+   - link 3 
   
 Note: 
-- Only 4% of all phages non-tailed.
-- 96% of capsids are icosahedral in shape, with different lattice types to support increased surface areas
-- Some T#s and therefor simulation sizes may overlap with bp numbers. In this sennario, consider which T# is most known/stable for those sizes based off requirements, with possible need to set up multiple and for visuliasation to support determineation.  
+- Some T#s overlap in genome size and bps number. In this sennario, consider which T# is most common, stable for your phage type based off litrature. In this case, it might be possible that you will need to set up multiple versions for visuliasation and review. 
 
 
-2. Define protein copy number
-
-   The rules of geometric icosahedral symmetry indicate an increase of 1 for T#, would see an increase of 60 asymmetric units. Following this rule, a T=1 will have 60 asymmetric units, a T=2 would have 120, and a T=13 would have 780 asymmetric units.
-
-   Use your defined T# to determine how many assymetric units you have.
-
-3. Define your T# parameters for use in simulation.
+2. Define your T# parameters for use in simulation.
 
    The Casper-Klug formula uses h, k parameters to define the T# based on symmetry. Therefore, knowing your T# you can work backwards to determine what these will be using the formula.
 
@@ -119,16 +109,72 @@ Note:
 
 
    Following this same train of though, use your T# to determine your formula parameters.
+   
+
+3. Define your protein copy number
+
+   The rules of geometric icosahedral symmetry indicate an increase of 1 for T# would see an increase of 60 asymmetric units. Following this rule, a T=1 will have 60 asymmetric units, a T=2 would have 120, and a T=13 would have 780 asymmetric units.
+
+   Based off this thinking, use your T# to determine how many assymetric units you will see when sym'ed.
+
+
 <br><br>
 
 **<mark>STEP 2 - Simulate your phage structure in ChimeraX</mark>**
 
-1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install it
-2. Download the most approproate_script.cxc_ to your desktop. There are 2 scripts available based on your phage parmaters, _simple.cxc_ for T=1 non-tailed and _mixed.cxc_ for T=2 or >2 tailed
-3. Open _script.cxc_ in terminal and update with your required parameters
-5. Run script by:
-   -  terminal with _/Applications/ChimeraX-1.10.app/Contents/MacOS/ChimeraX --script ~/location/20250827_cxc_script_full_T3_V02_mpa.cxc_
-   -  ChimeraX using command line _runscript_ _script.cxc_
+1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install it.
+2. Open your capsid protein .pdb file
+
+   ```bash
+   open 1CD3
+   ```
+
+   Note:
+   
+   Use 'open ~/Desktop/.../file_location/file_name.pdb' for local files, or 'open 1CD3' for PDB bank files.
+    
+   Multiple proteins can be open in the same working file at once.
+
+4. Save the session as your working file. Complete by pasting below in the command line or through main menu with File/Save.
+
+   ```bash
+   save session
+   ```
+
+5. Create your hkcage. Copy and paste the following into the command line of ChimeraX and update (Default)
+   
+   ```bash
+   hkcage 1 0 radius 120.0 edgeRadius 1.0 orientation '222' sphereFactor 1.0 alpha hexagonal color white
+   ```
+
+Where:
+- T0(h,k) parameters for T# e.g. Hkcage 1 0 sets up a T=1, size based on Casper Klug theory (h,k)=h2+hk+k2. More information here
+- Radius increases and decreases size of the hkcage to support your surface area, density and protein size needs (as default use 120.0 and then modify if needed)  If wanting to increase size use the same command line again but include replace true at the end to overwrite the initial Hkcage structure.
+- Edge radius how thick you want your Hkcage axes to be. Default 0.5
+- Orientation determines your symmetry type i.e. 222 for icosahedral symmetry with 2 fold at the x,y and z axis.
+- Sphere factor determines how ‘spherical’ you want the icosahedral shape, with 1.0 being the most spherical like, and 0.0 being most icosahedral like (ie can see where the pentagons create the icosahedral shape).
+- Lattice type default hexagonal. For other lattice types see here.
+- Lattice colour what colour you want the Hkcage to display as. 
+
+This will set up and visualise your Hkcage. For more information on the parameters you can change, visit here and here. 
+
+5. Move your protein to sit on your hkcage at the site of one of your pentagons. Placing at the site of a pentagon enables the simulation.
+   
+   This step is done manually using the right mouse tools located in the top main menu bar. To do this you will need to have some understanding of your proteins orientation and oligomeric state.
+
+7. Sym your protein across the Hkcage. Input command string into ChimeraX command line (Default)
+
+   ```bash
+   Sym #1 #2 I,222
+   ```
+Where:
+- #1 is your protein structure model ID
+- #2 is your Hkcage model ID
+- i indicates icosahedral symmetry requires
+- 222, is 2 fold at x,y,z symmetry
+
+For different symmetry types see here.
+
 
 To include more proteins in the simulation.
 
