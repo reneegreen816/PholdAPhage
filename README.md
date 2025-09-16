@@ -182,12 +182,22 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
    b. for addition of associated proteins e.g. tail - open new pdb file, move and place the new proteins manually. 
 
 <br><br>
-
 Further command considerations:
-   - Use molecule styles to redner your proteins different ways i.e. to show ribbon use _show cartoon_, or space filling _show surface_.
+   - Use molecule styles to render your proteins the way you need them i.e. to show ribbon use _cartoon_. Find more options here. 
+
+```bash
+   cartoon
+   ```
+
    - Colour by protein ITPM confidence level using command _color bfactor palette alphafold_
+
+```bash
+   color bfactor palette alphafold
+   ```
+
    - Include [XYZ-axis](https://www.rbvi.ucsf.edu/chimerax//docs/user/formats/bild.html#:~:text=BILD%20is%20a%20simple%20text,measure%20inertia%2C%203D%20object%20formats) for easier capsid/hkcage orientation. Noting X is red, Y is yellow, and Z is blue.
 
+<br><br>
 
 
 <h2>Version log</h2>
