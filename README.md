@@ -162,7 +162,7 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
    
    This step is done manually using the right mouse tools located in the top main menu bar. To do this you will need to have some understanding of your proteins orientation and oligomeric state.
 
-7. Sym your protein across your hkcage. Input command string into ChimeraX command line (Default)
+6. Sym your protein across your hkcage. Input command string into ChimeraX command line (Default)
 
 ```bash
    Sym #1 #2 I,222
@@ -175,9 +175,11 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
    For different symmetry and fold types see [ChimeraX Sym command page](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/sym.html).
 
-8. Extend your predictive model with further proteins:
-   1. to enable another sym - open new pdb file, move and place the new protein where required, then run sym again with new model IDs and symmetry types. Note: the more syms in a working file the more time it will take to render. Once rendered, save as a new file to reduce lagging and glitches. 
-   2. for addition of associated proteins e.g. tail - open new pdb file, move and place the new proteins manually. 
+7. Extend your predictive model with further proteins:
+
+   a. to enable another sym - open new pdb file, move and place the new protein where required, then run sym again with new model IDs and symmetry types. Note: the more syms in a working file the more time it will take to render. Once rendered, save as a new file to reduce lagging and glitches. 
+
+   b. for addition of associated proteins e.g. tail - open new pdb file, move and place the new proteins manually. 
 
 <br><br>
 
