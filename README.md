@@ -1,13 +1,31 @@
 # PholdAPhage
 
-<p align="center">
-<img width=25% height=auto alt="image" src="https://github.com/user-attachments/assets/a6b22538-5c11-4f08-bdb4-76c6f9c055fd" />
+<p align="center"> 
+  <img width=35% height=auto alt="image Phages being folded" src="https://github.com/user-attachments/assets/5eac2c23-ecb9-48d6-9bc2-ec433d377eea" />
 </p>
 
 
 Assemble unknown phage particles one protein at a time.
 
 **_PholdAPhage_** is a predictive modelling tool for the quick, efficient visualisation of unknown phage structures for experimental baseline. Traditional wet lab experiments to define protein morphology are time consuming and expensive. PholdAPhage supports the three dimensional reconstruction of unknown phage structures, utilising AlphaFold2, oligomeric state prediction, and predictive simulation by ChimeraX. 
+<br><br>
+
+<h2> Table of contents</h2>
+
+- Background
+   - What is a phage?
+   - How does PholdAPhage work?
+- Brief Overview
+   - Novel method
+- How to simulate your unknown phage
+   - Presimulation needs
+   - Protocol - Step 1 - Define your unknown phage T# and protein copy number
+   - Protocol - Step 2 - Simulate your phage structure in ChimeraX
+   - Further command considerations
+- Version Log
+- Bugs and Suggestions
+- Acknowledgements
+- How to cite
 <br><br>
 
 <h2>Background</h2>
@@ -32,8 +50,8 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
 
 <p align="center"><strong>Casper-Klug formula</strong></p>
 
-<p align="center">
-<img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/d44052c3-4f68-4772-ae4d-bf2271f38251" />
+<p align="center"> 
+  <img width=80% height=auto alt="image Casper-Klug formula" src="https://github.com/user-attachments/assets/3fce8eaa-7787-44c4-8c60-4c9758d3f2f4" />
 </p>
 <p align="center">
   Figure 2: Casper-Klug formula for viral symmetry to determine T-number and capsid protein number. The Theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape.
@@ -54,16 +72,16 @@ Example: A phage genome length of ~5,000bps, by research indicates a phage capsi
 Genome length is proportional to capsid size for DNA packaging. 
 
 Using the Casper-Klug (CK) Theory of viral symmetry:
-- Step 1: defines your phage's capsid triangulation number (T#) by the Genome-to-T-number model
-- Step 2: takes your T#, and it's _(h, k)_ parameters to simulate the correct protein copy number across a phage capsid structure in ChimeraX. 
+- Step 1: defines your phage's capsid triangulation number (T#) by the Genome-to-T-number model. 
+- Step 2: takes your T# and it's _(h, k)_ parameters to simulate the correct protein copy number across a phage capsid structure in ChimeraX using the sym tool for mathematical automoation and precision. 
 <br><br>
 
 <h2>How to simulate your unknown phage</h2>
 
 **<mark>Pre-simulation needs</mark>**
 - You will need to know you phage genome length
-- You will need your phage genome annotated and folded for use. To do this visit Pharokka, Phyntenny and AlphaFold2
-- have downloaded or have access to ChimeraX for protein visualisation
+- You will need your phage genome annotated and proteins folded for use. To do this, visit Pharokka, Phyntenny and AlphaFold2.
+- Have downloaded ChimeraX to your working computer. 
 <br><br>
 
 **<mark>STEP 1 - Define your unknown phage T# and protein copy number</mark>**
@@ -75,6 +93,12 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
    - [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pmc.ncbi.nlm.nih.gov/articles/PMC7762592/)
    - link 2
    - link 3
+  
+Note: 
+- Only 4% of all phages non-tailed.
+- 96% of capsids are icosahedral in shape, with different lattice types to support increased surface areas
+- Some T#s and therefor simulation sizes may overlap with bp numbers. In this sennario, consider which T# is most known/stable for those sizes based off requirements, with possible need to set up multiple and for visuliasation to support determineation.  
+
 
 2. Define protein copy number
 
@@ -99,24 +123,30 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
 **<mark>STEP 2 - Simulate your phage structure in ChimeraX</mark>**
 
-1. Download the attached _script.cxc_ to your desktop
-2. Open _script.cxc_ in terminal and update/save your parameters
-5. Run script through:
-   -  terminal by typing --script ~/Desktop/script.cxc
-   -  ChimeraX by command line runscript _script.cxc_
+1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install it
+2. Download the most approproate_script.cxc_ to your desktop. There are 2 scripts available based on your phage parmaters, _simple.cxc_ for T=1 non-tailed and _mixed.cxc_ for T=2 or >2 tailed
+3. Open _script.cxc_ in terminal and update with your required parameters
+5. Run script by:
+   -  terminal with _/Applications/ChimeraX-1.10.app/Contents/MacOS/ChimeraX --script ~/location/20250827_cxc_script_full_T3_V02_mpa.cxc_
+   -  ChimeraX using command line _runscript_ _script.cxc_
 
 To include more proteins in the simulation.
 
 With the simulation still open:
 1. type _open name.pdb_ in the command line (where _open name_ is the name of your file)
-2. Move and place the new protein on your hkcage where you require it using ChimeraX _right mouse tools_
-3. Run another _Sym_ command by typing _sym #x #y i,222_ where:
+2. move and place the new protein on your hkcage where you require it using ChimeraX _right mouse tools_
+3. run another _Sym_ command by typing _sym #x #y i,222_ where:
    - x = the protein models ID,
    - y = the hkcage models ID,
-   - _i_ indicates the symmetry type (i being icosahedral),
+   - i indicates the symmetry type (i being icosahedral),
    - and _222_ syms it as two-fold symmetry on the X, Y, and Z axis.
    For more options go see [ChimeraX Sym command page](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/sym.html).
 <br><br>
+
+Further command considerations:
+   - Colour by protein ITPM confidence level using command _color bfactor palette alphafold_
+   - Include [XYZ-axis](https://www.rbvi.ucsf.edu/chimerax//docs/user/formats/bild.html#:~:text=BILD%20is%20a%20simple%20text,measure%20inertia%2C%203D%20object%20formats) for easier capsid/hkcage orientation. Noting X is red, Y is yellow, and Z is blue.
+
 
 
 <h2>Version log</h2>
