@@ -198,7 +198,7 @@ Tip/s and notes:
    - Use molecule styles to render your proteins the way you need them i.e. to show ribbon use _cartoon_. Find more options here. 
 
 ```bash
-   cartoon
+   show cartoon hide surfaces hide atoms
    ```
 
    - Colour by protein ITPM confidence level using command _color bfactor palette alphafold_
