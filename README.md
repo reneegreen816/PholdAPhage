@@ -1,40 +1,39 @@
-# PholdAPhage
+<h1>PholdAPhage: Assemble unknown phage particles one protein at a time</h1> 
 
 <p align="center"> 
   <img width=35% height=auto alt="image Phages being folded" src="https://github.com/user-attachments/assets/5eac2c23-ecb9-48d6-9bc2-ec433d377eea" />
 </p>
 
 
-Assemble unknown phage particles one protein at a time.
 
 **_PholdAPhage_** is a predictive modelling tool for the quick, efficient visualisation of unknown phage structures for experimental baseline. Traditional wet lab experiments to define protein morphology are time consuming and expensive. PholdAPhage supports the three dimensional reconstruction of unknown phage structures, utilising AlphaFold2, oligomeric state prediction, and predictive simulation by ChimeraX. 
 <br><br>
 
 <h2> Table of contents</h2>
 
-- Background
-   - What is a phage?
-   - How does PholdAPhage work?
-- Brief Overview
-   - Novel method
-- How to simulate your unknown phage
-   - Presimulation needs
-   - Protocol - Step 1 - Define your unknown phage T# and protein copy number
-   - Protocol - Step 2 - Simulate your phage structure in ChimeraX
-   - Further command considerations
-- Version Log
-- Bugs and Suggestions
-- Acknowledgements
-- How to cite
+- [Background](#background)
+   - [What is a phage?](#what-is-a-phage) 
+   - [How does PholdAPhage work?](#how-does-pholdaphage-work)
+- [Brief Overview](#brief-overview)
+   - [Novel method](#novel-method)
+- [How to simulate your unknown phage](#how-to-simulate-your-unknown-phage)
+   - [Presimulation needs](#pre-simulation-needs)
+   - [Step 1 - Define your unknown phage T# and protein copy number](#step-1---define-your-unknown-phage-t-and-protein-copy-number)
+   - [Step 2 - Simulate your phage structure in ChimeraX](#step-2---simulate-your-phage-structure-in-chimerax)
+   - [Further command considerations](#further-command-considerations)
+- [Version Log](#version-log)
+- [Bugs and suggestions](#bugs-and-suggestions)
+- [Acknowledgements](#acknowledgements)
+- [How to cite](#how-to-cite)
 <br><br>
 
 <h2>Background</h2>
 
-**What is a phage?**
+<h3>What is a phage?</h3>
 
 Bacteriophages (phages) are viruses which infect bacteria and are the most abundant and diverse biological agents on earth. They consist of three main components: a capsid protein head, a nucleic acid genome, and tail for bacterial interaction. Presenting therapeutic opportunities as viral vectors and antimicrobials, many of their structures are unknown, with head and tail composition different for each phage. Structural differences which pose challenges in understanding their molecular composition and application for phage therapy. PholdAPhage provides a novel approach to structurally modelling unknown novel phages for baseline and visualisation.
 
-**How does PholdAPhage work?**
+<h3>How does PholdAPhage work?</h3>
 
 Phage capsid structures are highly conserved, 96% are icosahedral in nature applying mathematical principles of symmetry to shape their protein capsids proportional to genome length. PholdAPhage exploits this evolutionary capsid design principle, employing symmetry type and genome length, to predict an unknown phages triangulation number (T-number or T#), for protein copy number in support of computational simulation. 
 <br><br>
@@ -62,7 +61,7 @@ Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1
 
 <h2>Brief overview</h2>
 
-**Novel method**
+<h3>Novel method</h3>
 <!--<br><br>
 <img width=100% height=auto alt="image" src="https://github.com/user-attachments/assets/391993b5-6674-49e5-891c-766dc3367faa" />
 <br><br>-->
@@ -76,14 +75,13 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
 <h2>How to simulate your unknown phage</h2>
 
-**<mark>Pre-simulation needs</mark>**
+<h3><mark>Pre-simulation needs</mark></h3>
 - You will need to know you phage genome length.
 - You will need your phage genome annotated and proteins folded for use. To do this, visit [Phold](https://github.com/gbouras13/phold), [Phyntenny](https://github.com/susiegriggo/Phynteny), and [ColabFold](https://github.com/sokrypton/ColabFold).
 - Have an understanding of assymetric unit structure if greater then a T=1 phage capsid size. 
 - Have downloaded ChimeraX to your working computer.
-
 <br><br>
-**<mark>STEP 1 - Define your unknown phage T# and protein copy number</mark>**
+<h3><mark>STEP 1 - Define your unknown phage T# and protein copy number</mark></h3>
 
 1. Define your T-number (T#)
 
@@ -117,31 +115,35 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
    The rules of geometric icosahedral symmetry indicate an increase of 1 for T# would see an increase of 60 asymmetric units. Following this rule, a T=1 will have 60 identical protein units (or asymmetric units for T numbers greater then 1), a T=2 would have 120, and a T=13 would have 780 asymmetric units.
 
    Based off this thinking, use your T# to determine how many major capsid proteins (or assymetric units) you will see when sym'ed in ChimeraX. 
-
 <br><br>
-**<mark>STEP 2 - Simulate your phage structure in ChimeraX</mark>**
+<h3><mark>STEP 2 - Simulate your phage structure in ChimeraX</mark></h3>
 
    _Follow instructions below using test case_
 
 1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install it.
-2. Open your capsid protein .pdb file 
+2. Open ChimeraX
+3. Open your capsid protein .pdb file 
 
 ```bash
    open 1CD3
    ```
 
    Note/s:
-   
+   - You can open your file through ChimeraX command line or just through Finder
    - Use 'open ~/Desktop/.../file_location/file_name.pdb' for local files, or 'open 1CD3' for PDB bank files.
-   - Multiple proteins can be open in the same working file at once.
+   - Multiple proteins can be open in the same working file, at the same time.
 
-3. Save session as your working file. Complete by pasting the below in the command line or through the main menu by File > Save.
+
+4. Save session as your working file. Complete by pasting the below in the command line or through the main menu by File > Save. 
 
 ```bash
    save session
    ```
+Note/s:
+   - You will know this has worked, when if displayed on your log screen on the right hand screen in ChimeraX.
+ 
 
-4. Create your hkcage. Copy and paste the following into the command line of ChimeraX (Default)
+5. Create your hkcage. Copy and paste the following code into the command line of ChimeraX (Default code)
    
 ```bash
    hkcage 1 0 radius 120.0 edgeRadius 1.0 orientation '222' sphereFactor 1.0 alpha hexagonal color white
@@ -158,31 +160,41 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
    For more information on the parameters you can change, visit here and here. 
 
-5. Place protein on your hkcage at site of one of the pentagons to enable simulation.
+6. Place protein on your hkcage at site of one of the side axis of a pentagon to enable simulation.
    
-   This step is done manually using the right mouse tools located in the top main menu bar. To do this you will need to have some understanding of your proteins orientation and oligomeric state.
+   This step is done manually using the right mouse tools located in the top main menu bar. To do this:
+   
+      - activate the protein in your model ID pane by checking the _green finger check box_ to select
+      - select the _move model_ button and while holding down _ommand_ (on Mac) or _alt_ (on Android) move the protein to the position you need it to be. Holding command or Alt enable your to isolate the model.
+      - once in place on your pentagon, select the _rotate model_button and while holding down _command_ (on Mac) or _Alt_ (on Android) rotate close to the edge of your screen. This will rotate around the axis. If needed you can change the rotation axis, move diagonal or straight across the screen instead. 
 
-6. Sym your protein across your hkcage. Input command string into ChimeraX command line (Default)
+   Tip:
+     - It will help with placement if you have some understanding of your proteins orientation and oligomeric state.
+
+7. Sym your protein across your hkcage. Input command string into ChimeraX command line (Default)
 
 ```bash
-   Sym #1 #2 I,222
+   sym #2 #1 i,222
    ```
    Where:
-   - #1 is your protein structure model ID
-   - #2 is your hkcage model ID
-   - i indicates icosahedral symmetry
-   - 222, is 2 fold at x,y,z symmetry
+   - #1 is your hkcage model ID
+   - #2 is your protein structure model ID
+   - i indicates your icosahedral symmetry
+   - 222, is 2-fold at x,y,z symmetry
 
-   For different symmetry and fold types see [ChimeraX Sym command page](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/sym.html).
+Tip/s and notes:
+   - for different symmetry and fold types see [ChimeraX Sym command page](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/sym.html).
+   - once sym'ed, press control on your keyboard to deselect the protein
+   - syms can take time to process and set up by you computer. It is not unsual for it to take a few mins. 
 
-7. Extend your predictive model with further proteins:
+8. Extend your predictive model with further proteins:
 
    a. to enable another sym - open new pdb file, move and place the new protein where required, then run sym again with new model IDs and symmetry types. Note: the more syms in a working file the more time it will take to render. Once rendered, save as a new file to reduce lagging and glitches. 
 
-   b. for addition of associated proteins e.g. tail - open new pdb file, move and place the new proteins manually. 
 
+   b. for addition of associated proteins e.g. tail - open new pdb file, move and place the new proteins manually. 
 <br><br>
-Further command considerations:
+<h3><mark>Further command considerations<mark></h3>
    - Use molecule styles to render your proteins the way you need them i.e. to show ribbon use _cartoon_. Find more options here. 
 
 ```bash
@@ -196,7 +208,6 @@ Further command considerations:
    ```
 
    - Include [XYZ-axis](https://www.rbvi.ucsf.edu/chimerax//docs/user/formats/bild.html#:~:text=BILD%20is%20a%20simple%20text,measure%20inertia%2C%203D%20object%20formats) for easier capsid/hkcage orientation. Noting X is red, Y is yellow, and Z is blue.
-
 <br><br>
 
 
@@ -204,7 +215,7 @@ Further command considerations:
 PholdAPhage is a novel method to unknown phage development in 2025. Current release V1.
 <br><br>
 
-<h2>Bugs and Suggestions</h2>
+<h2>Bugs and suggestions</h2>
 If you come across bugs with PholdAPhage, or would like to make any suggestions to improve the method, please open an issue or email renee.green@flinders.edu.au  
 <br><br>
 
@@ -216,13 +227,16 @@ Molecular graphics images were produced using the UCSF Chimera package from the 
 
 If you use **PholdAPhage**, I would recommend a citation in your manuscript along the lines of:
 
-All predictive modelling of phages were done using the PholdAPhage modelling protocol (Green et al. 2023). Specifically, genome annotations completed with Pharokka v ___ (Bouras, et al. 2023), and Phynteny (Grigson, et al 2025). Folds completed with AlphaFold2, with ogliomeric predictions completed with XXXXXX (Grigson, et al 2025). Predictive modelling and simulation completed by UCSF ChimeraX package and sym command by the Computer Graphics Laboratory, University of California, San Francisco, and UCSF ChimeraX package hkcage command by Luque Lab at San Diego State University. with funding from the NSF.
+All predictive modelling of phages were done using the PholdAPhage predictive modelling protocol (Green, R. G. (2025), **PholdAPhage**: [https://github.com/reneegreen816/PholdAPhage](https://github.com/reneegreen816/PholdAPhage/edit/main/README.md) ). 
+ 
+Is you use Pharokka, Phold, Phynteny, or AlphaFold2 and collabfold for presimulation needs, it would be recommended to also include:
+
+Genome annotations completed with Pharokka V1.8.0 (Bouras, et al. 2023),  Phold V1 (Bouras, et al. 2025), and Phynteny (Grigson, et al 2025). Folds completed with AlphaFold2, with ogliomeric predictions completed with Phlegm (Grigson, et al 2025). Predictive modelling and simulation completed by UCSF ChimeraX package and sym command tools by the Computer Graphics Laboratory, University of California, San Francisco, and UCSF ChimeraX package hkcage command by Luque Lab at San Diego State University, with funding from the NSF.
 
 With the following full citations for the constituent tools below where relevant:
 
 - George Bouras, Roshan Nepal, Ghais Houtak, Alkis James Psaltis, Peter-John Wormald, Sarah Vreugde, Pharokka: a fast scalable bacteriophage annotation tool, Bioinformatics, Volume 39, Issue 1, January 2023, btac776, https://doi.org/10.1093/bioinformatics/btac776
 - Grigson, S.R., Bouras, G., Papudeshi, B., Mallawaarachchi, V., Roach, M.J., Decewicz, P., & Edwards, R.A. (2025). Synteny-aware functional annotation of bacteriophage genomes with Phynteny. bioRxiv, 2025.07.28.667340. https://doi.org/10.1101/2025.07.28.667340.
-- Grigson, S.R. ...
 - Jumper, J. et al. “Highly accurate protein structure prediction with AlphaFold.” Nature, 596, pages 583–589 (2021). DOI: 10.1038/s41586-021-03819-2
 - Pettersen, E.F., Goddard, T.D., Huang, C.C., Couch, G.S., Greenblatt, D.M., Meng, E.C., and Ferrin, T.E. "UCSF Chimera - A Visualization System for Exploratory Research and Analysis." J. Comput. Chem. 25:1605-1612 (2004). http://www.cgl.ucsf.edu/chimera
 - Mirdita, M. et al. “ColabFold: Making protein folding accessible to all.” Nature Methods, 19, pages 679–682 (2022). DOI: 10.1038/s41592-022-01488-1
