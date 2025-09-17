@@ -56,6 +56,7 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
   Figure 2: Casper-Klug formula for viral symmetry to determine T-number and capsid protein copy number. The theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape.
 </p>
 <br><br>
+
 Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1. A T=1 capsid incorporates 60 major proteins (protein copy number) simulated across the capsid structure, displaying the hkcage parameters (h, k) as (1, 0) for T# (1, 0) = 1^2 + 1x0 + 0^2 = 1. More infromation at [Viral Zone](https://viralzone.expasy.org/8577)
 <br><br>
 
@@ -76,6 +77,7 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 <h2>How to simulate your unknown phage</h2>
 
 <h3><mark>Pre-simulation needs</mark></h3>
+
 - You will need to know you phage genome length.
 - You will need your phage genome annotated and proteins folded for use. To do this, visit [Phold](https://github.com/gbouras13/phold), [Phyntenny](https://github.com/susiegriggo/Phynteny), and [ColabFold](https://github.com/sokrypton/ColabFold).
 - Have an understanding of assymetric unit structure if greater then a T=1 phage capsid size. 
