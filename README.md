@@ -25,6 +25,7 @@
 - [Bugs and suggestions](#bugs-and-suggestions)
 - [Acknowledgements](#acknowledgements)
 - [How to cite](#how-to-cite)
+- [References](#references)
 <br><br>
 
 <h2>Background</h2>
@@ -47,13 +48,13 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
 </p>
 <br><br>
 
-<p align="center"><strong>Casper-Klug formula</strong></p>
+<p align="center"><strong>Casper-Klug Theory</strong></p>
 
 <p align="center"> 
   <img width=80% height=auto alt="image Casper-Klug formula" src="https://github.com/user-attachments/assets/3fce8eaa-7787-44c4-8c60-4c9758d3f2f4" />
 </p>
 <p align="center">
-  Figure 2: Casper-Klug formula for viral symmetry to determine T-number and capsid protein copy number. The theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape (SIB Swiss Institute of Bioinformatics - Viral Zone, 2025)
+  Figure 2: Casper-Klug Theory and formula for viral symmetry to determine T-number and capsid protein copy number. The theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape (Comas-Garcia, 2024; SIB Swiss Institute of Bioinformatics - Viral Zone, 2025)
 </p>
 <br><br>
 
@@ -71,7 +72,7 @@ Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1
 
 Using the Casper-Klug (CK) Theory of viral symmetry:
 - Step 1: defines your phage's capsid T# by using the Genome-to-T-number model.
-- Step 2: takes your defined T# and Casper-Klug (h, k) parameters to simulate your protein copy number (asymmetric unit number) across a phage capsid structure in UCSF ChimeraX, using its hkcage and sym command automation tools. 
+- Step 2: takes your defined T# and Casper-Klug (h, k) parameters to simulate your protein copy number (asymmetric unit number) across a phage capsid structure in ChimeraX, using its hkcage and sym command automation tools. 
 <br><br>
 
 <h2>How to simulate your unknown phage</h2>
@@ -87,20 +88,19 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
 1. Define your T-number (T#)
 
-   Use your genome length (in bps) to determine your T#. If you know your phage capsid diameter, this can also help with genome length proportional to capsid size. To determine your phages T# you can start with the following links. If your phage or proteomics are known, this can also help to define size based on capsid dimensions and protein placement. 
+   Use your genome length (in bps) to determine your T#. If you know your phage capsid diameter, this can also help with genome length proportional to capsid size. To determine your phages T# you can start with the following link. If your phage or proteomics are known, this can also help to define size based on capsid dimensions and protein placement. 
 
    - [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pmc.ncbi.nlm.nih.gov/articles/PMC7762592/)
-   - link 2
-   - link 3 
   
    Note: 
    - T#s can overlap in genome size and bps number. In this scenario consider which T# is most common or stable for your phage type or bps length, based on literature. If literature review doesn't help determine the best T# for you, consider setting up all possible versions for visualisation and observational review.
+   - The type of DNA/RNA your phage has will also help to define its size, with dsDNA requiring a higher T# to support a larger genome. 
  
 
 
 2. Define your T# parameters for use in simulation.
 
-   The Casper-Klug formula uses (h, k) parameters to define the T# based on symmetry. Therefore, knowing your T#, you can work backwards to determine what these will be. These will then be used to create your hkcage in UCSF ChimeraX.
+   The Casper-Klug formula uses (h, k) parameters to define the T# based on symmetry. Therefore, knowing your T#, you can work backwards to determine what these will be. These will then be used to create your hkcage in ChimeraX.
 
 
    Example: for a T# of 1 your (h, k) values would be (1, 0) where 1 = 1^2 + 1x0 + 0^2. In this sense you can work to find yours. Here are a few examples: 
@@ -123,8 +123,8 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
    _Follow instructions below using test case_
 
-1. If you don't have UCSF ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install
-2. Open UCSF ChimeraX
+1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install
+2. Open ChimeraX
 3. Open your capsid protein .pdb file 
 
 ```bash
@@ -132,7 +132,7 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
    ```
 
    Notes:
-   - You can open your file through UCSF ChimeraX command line or Finder.
+   - You can open your file using ChimeraX command line, or Finder.
    - Use 'open ~/Desktop/.../file_location/file_name.pdb' for local files, or 'open 1CD3' for PDB bank files.
    - Multiple proteins can be open in the same working file, at the same time.
 
@@ -143,10 +143,10 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
    save session
    ```
    Notes:
-   - You will know this has worked, when displayed in your log panel to the right hand side of your screen in UCSF ChimeraX.
+   - You will know this has worked, when displayed in your log panel to the right hand side of your screen in ChimeraX.
  
 
-5. Create your hkcage. Copy and paste the following code into the command line of UCSF ChimeraX (Default)
+5. Create your hkcage. Copy and paste the following code into the command line of ChimeraX (Default)
    
 ```bash
    hkcage 1 0 radius 120.0 edgeRadius 1.0 orientation '222' sphereFactor 1.0 alpha hexagonal color white
@@ -154,7 +154,7 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
    Where:
    - **hkcage (h,k)** is your defined parameters for your T# e.g. _hkcage 1 0_ sets up a T=1 capsid size based on (h,k)=h2+hk+k2. See above. 
-   - **Radius** increases and decreases size of the hkcage to support your surface area, density and protein size needs. If wanting to increase size, reuse the same command line as above but include _replace true_ at the end to overwrite the initial hkcage structure. Default size 120.0. Notes: UCSF ChimeraX works in Angstroms for physical distance units.
+   - **Radius** increases and decreases size of the hkcage to support your surface area, density and protein size needs. If wanting to increase size, reuse the same command line as above but include _replace true_ at the end to overwrite the initial hkcage structure. Default size 120.0. Notes: ChimeraX works in Angstroms for physical distance units.
    - **Edge radius** how thick you want your hkcage axis to be. Default 0.5.
    - **Orientation** determines your symmetry type i.e. 222 for icosahedral symmetry with 2 fold symmetry at the x, y and z axis. Default 222.
    - **Sphere factor** determines how ‘spherical’ you want the icosahedral shape, with 1.0 being the most spherical like, and 0.0 being most icosahedral like (i.e. can see where the pentagons fold for the icosahedral shape). 
@@ -175,7 +175,7 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
      - It will help with placement if you have some understanding of your proteins orientation or oligomeric state.
      - If you capsid structure is greater than a T=1, then you will need to place your asymmetric unit, or if separate, your required number of proteins in the hexamer also to enable simulation. i.e - if a T=1 then just the pentamer. If T=2 then one protein in the pentamer and 1 in the hexamer, or T=3 then 1 in pentamer and 2 in the hexamer, and so on. 
 
-7. Sym your units across your hkcage. Copy and paste the following code into the command line of UCSF ChimeraX (Default)
+7. Sym your units across your hkcage. Copy and paste the following code into the command line of ChimeraX (Default)
 
 ```bash
    sym #2 #1 i,222
@@ -247,5 +247,9 @@ With the following full citations for the constituent tools below where relevant
 - Pettersen, E.F., Goddard, T.D., Huang, C.C., Couch, G.S., Greenblatt, D.M., Meng, E.C., and Ferrin, T.E. "UCSF Chimera - A Visualization System for Exploratory Research and Analysis." J. Comput. Chem. 25:1605-1612 (2004). http://www.cgl.ucsf.edu/chimera
 - Mirdita, M. et al. “ColabFold: Making protein folding accessible to all.” Nature Methods, 19, pages 679–682 (2022). DOI: 10.1038/s41592-022-01488-1
 
+<h2>References</h2>
 
+- Comas-Garcia, M. (2024). How structural biology has changed our understanding of icosahedral viruses. Journal of Virology, 98(10). https://doi.org/10.1128/jvi.01111-23
+- Icosahedric capsids, Caspar and Klug ~ ViralZone page. (2019). Expasy.org. https://viralzone.expasy.org/8577
+- Luque, A., Benler, S., Lee, D. Y., Brown, C., & White, S. (2020). The Missing Tailed Phages: Prediction of Small Capsid Candidates. Microorganisms, 8(12), 1944. https://doi.org/10.3390/microorganisms8121944
 
