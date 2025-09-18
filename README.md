@@ -6,7 +6,7 @@
 
 
 
-**_PholdAPhage_** is a predictive modelling tool for the quick, efficient visualisation of unknown phage structures for experimental baseline. Traditional wet lab experiments to define protein morphology are time consuming and expensive. PholdAPhage supports the three dimensional reconstruction of unknown phage structures, utilising AlphaFold2, oligomeric state prediction, and predictive simulation by ChimeraX. 
+**_PholdAPhage_** is a predictive modelling tool for the quick, efficient visualisation of unknown phage structures for experimental baseline. Traditional wet lab experiments to define protein morphology are time consuming and expensive. PholdAPhage supports the three dimensional reconstruction of unknown phage structures, utilising AlphaFold2, oligomeric state prediction, and predictive simulation by UCSF ChimeraX. 
 <br><br>
 
 <h2> Table of contents</h2>
@@ -17,9 +17,9 @@
 - [Brief Overview](#brief-overview)
    - [Novel method](#novel-method)
 - [How to simulate your unknown phage](#how-to-simulate-your-unknown-phage)
-   - [Presimulation needs](#pre-simulation-needs)
+   - [Pre-simulation needs](#pre-simulation-needs)
    - [Step 1 - Define your unknown phage T# and protein copy number](#step-1---define-your-unknown-phage-t-and-protein-copy-number)
-   - [Step 2 - Simulate your phage structure in ChimeraX](#step-2---simulate-your-phage-structure-in-chimerax)
+   - [Step 2 - Simulate your phage structure in UCSF ChimeraX](#step-2---simulate-your-phage-structure-in-ucsf-chimerax)
    - [Further command considerations](#further-command-considerations)
 - [Version Log](#version-log)
 - [Bugs and suggestions](#bugs-and-suggestions)
@@ -43,7 +43,7 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
 <img width=60% height=auto alt="image" src="https://github.com/user-attachments/assets/7fa14d17-31ab-4bb2-a8e7-650c98bc8568" />
 </p>
 <p align="center">
-  Figure 1: Example of differing icosahedral lattices employing the theory of viral symmetry for T=7 phage capsids in support of increased capsid size. 
+  Figure 1: Example of differing icosahedral lattices employing the theory of viral symmetry for T=7 phage capsids in support of increased capsid size (Luque et al., 2020).
 </p>
 <br><br>
 
@@ -53,11 +53,11 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
   <img width=80% height=auto alt="image Casper-Klug formula" src="https://github.com/user-attachments/assets/3fce8eaa-7787-44c4-8c60-4c9758d3f2f4" />
 </p>
 <p align="center">
-  Figure 2: Casper-Klug formula for viral symmetry to determine T-number and capsid protein copy number. The theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape.
+  Figure 2: Casper-Klug formula for viral symmetry to determine T-number and capsid protein copy number. The theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape (SIB Swiss Institute of Bioinformatics - Viral Zone, 2025)
 </p>
 <br><br>
 
-Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1. A T=1 capsid incorporates 60 major proteins (protein copy number) simulated across the capsid structure, displaying the hkcage parameters (h, k) as (1, 0) for T# (1, 0) = 1^2 + 1x0 + 0^2 = 1. More infromation at [Viral Zone](https://viralzone.expasy.org/8577)
+Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1. The Casper-Klug formula being (h, k) or (1, 0) as T# (1, 0) = 1^2 + 1x0 + 0^2 = 1. A T#=1 capsid structure would have 60 major proteins or identical asymmetrical subunits (protein copy number) wrapped across the capsid structure. More information at [Viral Zone](https://viralzone.expasy.org/8577)
 <br><br>
 
 <h2>Brief overview</h2>
@@ -71,7 +71,7 @@ Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1
 
 Using the Casper-Klug (CK) Theory of viral symmetry:
 - Step 1: defines your phage's capsid T# by using the Genome-to-T-number model.
-- Step 2: takes your defined T# and (h, k) parameters to simulate your protein copy # (assymetric unit number) across a phage capsid structure in ChimeraX, using it's sym command automation tool. 
+- Step 2: takes your defined T# and Casper-Klug (h, k) parameters to simulate your protein copy number (asymmetric unit number) across a phage capsid structure in UCSF ChimeraX, using its hkcage and sym command automation tools. 
 <br><br>
 
 <h2>How to simulate your unknown phage</h2>
@@ -80,100 +80,102 @@ Using the Casper-Klug (CK) Theory of viral symmetry:
 
 - You will need to know you phage genome length.
 - You will need your phage genome annotated and proteins folded for use. To do this, visit [Phold](https://github.com/gbouras13/phold), [Phyntenny](https://github.com/susiegriggo/Phynteny), and [ColabFold](https://github.com/sokrypton/ColabFold).
-- Have an understanding of assymetric unit structure if greater then a T=1 phage capsid size. 
-- Have downloaded ChimeraX to your working computer.
+- Have a possible understanding of asymmetric unit structure, if your predicting a model larger than a T#=1 capsid size. 
+- Have downloaded UCSF ChimeraX to your working computer.
 <br><br>
 <h3><mark>STEP 1 - Define your unknown phage T# and protein copy number</mark></h3>
 
 1. Define your T-number (T#)
 
-   Use your genome length (in bps) to determine your T#. If you know your phage capsid diameter, this can also help with genome length proportional to cappsid size. To determine your phages T# you can start with the following links. If the phage is known or proteomics are known, this can also help. 
+   Use your genome length (in bps) to determine your T#. If you know your phage capsid diameter, this can also help with genome length proportional to capsid size. To determine your phages T# you can start with the following links. If your phage or proteomics are known, this can also help to define size based on capsid dimensions and protein placement. 
 
    - [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pmc.ncbi.nlm.nih.gov/articles/PMC7762592/)
    - link 2
    - link 3 
   
    Note: 
-   - Some T#s can overlap in genome size / bps number. In this sennario, consider which T# is most common, stable for your phage type, based on litrature. If decision is not able to be made, consider setting up all possibile versions for visuliasation and review. 
+   - T#s can overlap in genome size and bps number. In this scenario consider which T# is most common or stable for your phage type or bps length, based on literature. If literature review doesn't help determine the best T# for you, consider setting up all possible versions for visualisation and observational review.
+ 
 
 
 2. Define your T# parameters for use in simulation.
 
-   The Casper-Klug formula uses (h, k) parameters to define the T# based on symmetry. Therefore, knowing your T#, you can work backwards to determine what these will be. These will then be used to create your hkcage in ChimeraX.
+   The Casper-Klug formula uses (h, k) parameters to define the T# based on symmetry. Therefore, knowing your T#, you can work backwards to determine what these will be. These will then be used to create your hkcage in UCSF ChimeraX.
 
 
-   For example: for a T# of 1 your (h, k) values would be (1, 0) where 1 = 1^2 + 1x0 + 0^2. In this sense you can work to find yours. Here are a few examples: 
+   Example: for a T# of 1 your (h, k) values would be (1, 0) where 1 = 1^2 + 1x0 + 0^2. In this sense you can work to find yours. Here are a few examples: 
 
    - T#7 or (2 ,1) = 2^2 + 2x1 + 1^2 = 7
    - T#9 or (3 ,0) = 3^2 + 3x0 + 0^2 = 9
    - T#13 or (3 ,1) = 3^2 + 3x1 + 1^2 = 13
 
 
-   Following this same train of thought, work back from your T# to determine your formula parameters. 
+   Following this approach to work back from your T# and determine your (h, k) parameters. 
    
 
 3. Define your protein copy number
 
-   The rules of geometric icosahedral symmetry indicate an increase of 1 for T# would see an increase of 60 asymmetric units. Following this rule, a T=1 will have 60 identical protein units (or asymmetric units for T numbers greater then 1), a T=2 would have 120, and a T=13 would have 780 asymmetric units.
+   The rules of icosahedral symmetry indicate an increase of 1 for your T#, would see an increase of 60 asymmetric units. Following this rule, a T=1 will have 60 identical units (asymmetric units for T numbers greater then 1), a T=2 would have 120, and a T=13 would have 780 asymmetric units.
 
-   Based off this thinking, use your T# to determine how many major capsid proteins (or assymetric units) you will see when sym'ed in ChimeraX. 
+   Based off this thinking, use your T# to determine how identical units you will see when creating your sym in ChimeraX. 
 <br><br>
-<h3><mark>STEP 2 - Simulate your phage structure in ChimeraX</mark></h3>
+<h3><mark>STEP 2 - Simulate your phage structure in UCSF ChimeraX</mark></h3>
 
    _Follow instructions below using test case_
 
-1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install it.
-2. Open ChimeraX
+1. If you don't have UCSF ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install
+2. Open UCSF ChimeraX
 3. Open your capsid protein .pdb file 
 
 ```bash
    open 1CD3
    ```
 
-   Note/s:
-   - You can open your file through ChimeraX command line or just through Finder
+   Notes:
+   - You can open your file through UCSF ChimeraX command line or Finder.
    - Use 'open ~/Desktop/.../file_location/file_name.pdb' for local files, or 'open 1CD3' for PDB bank files.
    - Multiple proteins can be open in the same working file, at the same time.
 
 
-4. Save session as your working file. Complete by pasting the below in the command line or through the main menu by File > Save. 
+4. Save session as a working .cxc file. Complete by pasting the below in the command line or through the main menu by File > Save. 
 
 ```bash
    save session
    ```
-Note/s:
-   - You will know this has worked, when if displayed on your log screen on the right hand screen in ChimeraX.
+   Notes:
+   - You will know this has worked, when displayed in your log panel to the right hand side of your screen in UCSF ChimeraX.
  
 
-5. Create your hkcage. Copy and paste the following code into the command line of ChimeraX (Default code)
+5. Create your hkcage. Copy and paste the following code into the command line of UCSF ChimeraX (Default)
    
 ```bash
    hkcage 1 0 radius 120.0 edgeRadius 1.0 orientation '222' sphereFactor 1.0 alpha hexagonal color white
    ```
 
    Where:
-   - **hkcage (h,k)** is your parameters for T# e.g. _hkcage 1 0_ sets up a T=1 capsid size based on (h,k)=h2+hk+k2. See above. 
-   - **Radius** increases and decreases size of the hkcage to support your surface area, density and protein size needs. If wanting to increase size use the same command line as above but include _replace true_ at the end to overwrite the initial hkcage structure. Default 120.0
-   - **Edge radius** how thick you want your Hkcage axes to be. Default 0.5
-   - **Orientation** determines your symmetry type i.e. 222 for icosahedral symmetry with 2 fold at the x,y and z axis. Default 222
-   - **Sphere factor** determines how ‘spherical’ you want the icosahedral shape, with 1.0 being the most spherical like, and 0.0 being most icosahedral like (ie can see where the pentagons create the icosahedral shape).
-   - **alpha** indicates lattice type. For lattice types see here. Default hexagonal
-   - **color** colour of your hkcage. Default white  
+   - **hkcage (h,k)** is your defined parameters for your T# e.g. _hkcage 1 0_ sets up a T=1 capsid size based on (h,k)=h2+hk+k2. See above. 
+   - **Radius** increases and decreases size of the hkcage to support your surface area, density and protein size needs. If wanting to increase size, reuse the same command line as above but include _replace true_ at the end to overwrite the initial hkcage structure. Default size 120.0. Notes: UCSF ChimeraX works in Angstroms for physical distance units.
+   - **Edge radius** how thick you want your hkcage axis to be. Default 0.5.
+   - **Orientation** determines your symmetry type i.e. 222 for icosahedral symmetry with 2 fold symmetry at the x, y and z axis. Default 222.
+   - **Sphere factor** determines how ‘spherical’ you want the icosahedral shape, with 1.0 being the most spherical like, and 0.0 being most icosahedral like (i.e. can see where the pentagons fold for the icosahedral shape). 
+   - **alpha** determines lattice type. For lattice types see here. Default hexagonal.
+   - **color** the colour of your hkcage. Default white.
 
-   For more information on the parameters you can change, visit here and here. 
+   For more information on the parameters you can change, visit [ChimeraX hkcage](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/hkcage.html) and [UCSF ChimeraX User Guide](https://www.rbvi.ucsf.edu/chimerax/docs/user/index.html) 
 
 6. Place protein on your hkcage at site of one of the side axis of a pentagon to enable simulation.
    
    This step is done manually using the right mouse tools located in the top main menu bar. To do this:
    
-      - activate the protein in your model ID pane by checking the _green finger check box_ to select
-      - select the _move model_ button and while holding down _ommand_ (on Mac) or _alt_ (on Android) move the protein to the position you need it to be. Holding command or Alt enable your to isolate the model.
-      - once in place on your pentagon, select the _rotate model_button and while holding down _command_ (on Mac) or _Alt_ (on Android) rotate close to the edge of your screen. This will rotate around the axis. If needed you can change the rotation axis, move diagonal or straight across the screen instead. 
+      - activate the protein in your model ID pane by checking the _green finger check box_ to select.
+      - select the _move model_ button in the right mouse tools main menu, and while holding down _command_ (on Mac) or _alt_ (on Android) move the protein to the position you need it to be. Holding command or Alt enables you to isolate the protein model from your other layers.
+      - once in place on your pentagon, select the _rotate model_button and while holding down _command_ (on Mac) or _Alt_ (on Android) rotate your mouse curser close to the edge of your screen. This will rotate around the axis. If needed you can change the rotation axis by moving diagonal or straight across the screen. 
 
    Tip:
-     - It will help with placement if you have some understanding of your proteins orientation and oligomeric state.
+     - It will help with placement if you have some understanding of your proteins orientation or oligomeric state.
+     - If you capsid structure is greater than a T=1, then you will need to place your asymmetric unit, or if separate, your required number of proteins in the hexamer also to enable simulation. i.e - if a T=1 then just the pentamer. If T=2 then one protein in the pentamer and 1 in the hexamer, or T=3 then 1 in pentamer and 2 in the hexamer, and so on. 
 
-7. Sym your protein across your hkcage. Input command string into ChimeraX command line (Default)
+7. Sym your units across your hkcage. Copy and paste the following code into the command line of UCSF ChimeraX (Default)
 
 ```bash
    sym #2 #1 i,222
@@ -185,17 +187,19 @@ Note/s:
    - 222, is 2-fold at x,y,z symmetry
 
 Tip/s and notes:
-   - for different symmetry and fold types see [ChimeraX Sym command page](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/sym.html).
-   - once sym'ed, press control on your keyboard to deselect the protein
-   - syms can take time to process and set up by you computer. It is not unsual for it to take a few mins. 
+   - If simulating more than 1 unit at a time, the use the command line sym #2,3 #1 i,222, where#2,3 are your protein model IDs. 
+   - For different symmetry and fold types see [UCSF ChimeraX Sym command page](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/sym.html).
+   - Once sym'ed, press control on your keyboard to deselect the units selected.
+   - Sym's can take time to process and set-up by your computer. It is not unusual for it to take a few mins for the sym to show. 
 
 8. Extend your predictive model with further proteins:
 
-   a. to enable another sym - open new pdb file, move and place the new protein where required, then run sym again with new model IDs and symmetry types. Note: the more syms in a working file the more time it will take to render. Once rendered, save as a new file to reduce lagging and glitches. 
+   a. to enable another sym - open new .pdb file, move and place the new protein where required, then run sym again with new model IDs and symmetry types. Note: the more syms in a working file the more time it will take to render. Once rendered, save as a new file to reduce lagging and glitches. 
 
 
-   b. for addition of associated proteins e.g. tail - open new pdb file, move and place the new proteins manually. 
+   b. for addition of associated proteins e.g. tail - open new .pdb file, move and place the new proteins manually. 
 <br><br>
+
 <h3><mark>Further command considerations<mark></h3>
    - Use molecule styles to render your proteins the way you need them i.e. to show ribbon use _cartoon_. Find more options here. 
 
@@ -218,11 +222,11 @@ PholdAPhage is a novel method to unknown phage development in 2025. Current rele
 <br><br>
 
 <h2>Bugs and suggestions</h2>
-If you come across bugs with PholdAPhage, or would like to make any suggestions to improve the method, please open an issue or email renee.green@flinders.edu.au  
+If you come across bugs with PholdAPhage, or would like to make any suggestions to improve the method, please open an issue or email renee.green@flinders.edu.au .
 <br><br>
 
 <h2>Acknowledgements</h2>
-Molecular graphics images were produced using the UCSF Chimera package from the Computer Graphics Laboratory, University of California, San Francisco (supported by NIH P41 RR-01081). Annotation analysis and protein folding to support development of this methods completed using Pawsey Supercomputing Research Centre (Perth, Australia) which is funded by the Australian Government. 
+Molecular graphics images were produced using the UCSF ChimeraX package from the Computer Graphics Laboratory, University of California, San Francisco (supported by NIH P41 RR-01081). Annotation analysis and protein folding to support development of this methods completed using Pawsey Supercomputing Research Centre (Perth, Australia) which is funded by the Australian Government. 
 <br><br>
 
 <h2>How to cite</h2>
@@ -231,9 +235,9 @@ If you use **PholdAPhage**, I would recommend a citation in your manuscript alon
 
 All predictive modelling of phages were done using the PholdAPhage predictive modelling protocol (Green, R. G. (2025), **PholdAPhage**: [https://github.com/reneegreen816/PholdAPhage](https://github.com/reneegreen816/PholdAPhage/edit/main/README.md) ). 
  
-Is you use Pharokka, Phold, Phynteny, or AlphaFold2 and collabfold for presimulation needs, it would be recommended to also include:
+Is you use Pharokka, Phold, Phynteny, or AlphaFold2 and collabfold for pre-simulation needs, it would be recommended to also include:
 
-Genome annotations completed with Pharokka V1.8.0 (Bouras, et al. 2023),  Phold V1 (Bouras, et al. 2025), and Phynteny (Grigson, et al 2025). Folds completed with AlphaFold2, with ogliomeric predictions completed with Phlegm (Grigson, et al 2025). Predictive modelling and simulation completed by UCSF ChimeraX package and sym command tools by the Computer Graphics Laboratory, University of California, San Francisco, and UCSF ChimeraX package hkcage command by Luque Lab at San Diego State University, with funding from the NSF.
+Genome annotations completed with Pharokka V1.8.0 (Bouras, et al. 2023),  Phold V1 (Bouras, et al. 2025), and Phynteny (Grigson, et al 2025). Folds completed with AlphaFold2, with oligomeric predictions completed with Phlegm (Grigson, et al 2025). Predictive modelling and simulation completed by UCSF ChimeraX package and sym command tools by the Computer Graphics Laboratory, University of California, San Francisco, and UCSF ChimeraX package hkcage command by Luque Lab at San Diego State University, with funding from the NSF.
 
 With the following full citations for the constituent tools below where relevant:
 
