@@ -56,9 +56,16 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
 <p align="center">
   Figure 2: Casper-Klug Theory and formula for viral symmetry to determine T-number and capsid protein copy number. The theory is built on 60 identical subunits organized on the 20 triangles creating the faces of the icosahedral shape (Comas-Garcia, 2024; SIB Swiss Institute of Bioinformatics - Viral Zone, 2025)
 </p>
+
+<p align="center"> 
+  <img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/3a7e2add-5b07-4fa0-a99b-88b1bfb6ec21" />
+</p>
+<p align="center">
+  Figure 3: Casper-Klug h, k parameters used to define pentagon location, with the h and k paramters shown as integers and used to define the number of units in a straight line from one pentagon to another, before shifting to the side to reach the next pentagon. (Comas-Garcia, 2024; SIB Swiss Institute of Bioinformatics - Viral Zone, 2025)
+</p>
 <br><br>
 
-Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1. The Casper-Klug formula being (h, k) or (1, 0) as T# (1, 0) = 1^2 + 1x0 + 0^2 = 1. A T#=1 capsid structure would have 60 major proteins or identical asymmetrical subunits (protein copy number) wrapped across the capsid structure. More information at [Viral Zone](https://viralzone.expasy.org/8577)
+Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1. The Casper-Klug formula being (h, k) or (1, 0) with T# (1, 0) = 1^2 + 1x0 + 0^2 = 1. This T#=1 capsid structure would see 60 major proteins or identical asymmetrical subunits (protein copy number) wrapped across the capsid structure. More information at [Viral Zone](https://viralzone.expasy.org/8577)
 <br><br>
 
 <h2>Brief overview</h2>
