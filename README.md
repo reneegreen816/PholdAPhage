@@ -95,7 +95,8 @@ Using the CK Theory of viral symmetry:
 
    Using your genome length, define your T# using the parameters below (Luque et al., 2020). Main sizes for icosahedral symmetry, access more quasi-symmetry capsid sizes and associated lattice types in supplementary document folder.
 
-   Sizes defined by:
+   Sizes defined by the following where G is your genome length, T is your T#, and D is your capsids diameter:
+<br><br>
 <p align="center">
    $$G(T) = a_G T^{b_G}$$    where    $$D(T) = a_D T^{b_D}$$
 </p>
