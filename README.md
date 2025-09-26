@@ -93,7 +93,7 @@ Using the CK Theory of viral symmetry:
 
 1. Define your T-number (T#)
 
-   Using your genome length, define your T# using the parameters below (Luque et al., 2020). Main sizes for icosahedral symmetry, access more quasi-symmetry capsid sizes and assocaited lattice types in supplementary folders.
+   Using your genome length, define your T# using the parameters below (Luque et al., 2020). Main sizes for icosahedral symmetry, access more quasi-symmetry capsid sizes and associated lattice types in supplementary document folder.
 
    Sizes defined by:
 <p align="center">
@@ -124,7 +124,7 @@ Using the CK Theory of viral symmetry:
    Note: 
    - T#s can overlap in genome size and bps number eg T=3 and T=4. In this scenario consider which T# is most common or stable for your phage family type or bps length, based on literature. If literature review doesn't help determine the best T# for you, consider setting up all possible versions for visualisation and observational review.
    - The type of DNA/RNA your phage has will also help to define its size, with dsDNA requiring a higher T# to support a larger genome.
-   - Phage capsid size and protemoics can also help define. See more in supplementary folders.
+   - Phage capsid size and proteomics can also help define. See more in supplementary documents folder.
    - See [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pubmed.ncbi.nlm.nih.gov/33302408/) for more information on how these sizes were defined. 
 <br><br>
 
