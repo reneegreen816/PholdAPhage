@@ -1,10 +1,10 @@
-<h1>PholdAPhage: Assemble unknown phage particles one protein at a time</h1> 
+<h1>PholdAPhage: Assemble unknown phage particles one protein at a time</h1>
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17216762.svg)](https://doi.org/10.5281/zenodo.17216762)
 
 <p align="center"> 
   <img width=35% height=auto alt="image Phages being folded" src="https://github.com/user-attachments/assets/5eac2c23-ecb9-48d6-9bc2-ec433d377eea" />
 </p>
-
-
 
 **_PholdAPhage_** is a predictive modelling tool for the quick, efficient visualisation of unknown phage structures for experimental baseline. Traditional wet lab experiments to define protein morphology are time consuming and expensive. PholdAPhage supports the three dimensional reconstruction of unknown phage structures, utilising genome annotation, protein folding, and oligomeric state predictions, for predictive simulation by UCSF ChimeraX. 
 <br><br>
