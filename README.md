@@ -101,29 +101,29 @@ Using the CK Theory of viral symmetry:
    $$G(T) = a_G T^{b_G}$$    where    $$D(T) = a_D T^{b_D}$$
 </p>
 <br><br>
-<p align="center"><strong>TABLE 1: Genome length proportional to T#</strong></p>
+<p align="center"><strong>TABLE 1: Genome length proportional to T# predictions</strong></p>
 
 <div align="center">
   
-   | T#          | lower limit (kbp)  | Upper limit (kbp) |        
+   | T#          | lower limit (bps)  | Upper limit (bps) |        
    |-------------|--------------------| ------------------|          
-   | 1           | 1.2401731          | 4.412216004       |
-   | 3           | 8.112244379        | 17.09526687       |
-   | 4           | 13.20724825        | 24.48067158       |
-   | 7           | 33.50795485        | 50.07269832       |
-   | 9           | 50.05269322        | 70.22104642       |
-   | 12          | 77.24829866        | 106.0778193       |
-   | 13          | 86.65958139        | 119.6687262       |
-   | 16          | 115.5272068        | 165.3666741       |
-   | 19          | 145.2220842        | 218.1227542       |
-   | 21          | 165.4641966        | 256.9938435       |
-   | 25          | 206.9939534        | 343.1382484       |
-   | 27          | 228.2632678        | 390.244288        |
-   | 28          | 239.0191922        | 414.7751593       |
+   | 1           | 1240.2             | 4412.2            |
+   | 3           | 8112.2             | 17095.3           |
+   | 4           | 13207.2            | 24480.7           |
+   | 7           | 33507.9            | 50072.7           |
+   | 9           | 50052.7            | 70221.0           |
+   | 12          | 77248.3            | 106077.8          |
+   | 13          | 86659.6            | 119668.7          |
+   | 16          | 115527.2           | 165366.7          |
+   | 19          | 145222.1           | 218122.7          |
+   | 21          | 165464.2           | 256993.8          |
+   | 25          | 206993.9           | 343138.2          |
+   | 27          | 228263.3           | 390244.3          |
+   | 28          | 239019.2           | 414775.1          |
 </div>
   
    Note: 
-   - T#s can overlap in genome size and bps number eg T=3 and T=4. In this scenario consider which T# is most common or stable for your phage family type or bps length, based on literature. If literature review doesn't help determine the best T# for you, consider setting up all possible versions for visualisation and observational review.
+   - T#s can overlap in genome size and bps number e.g. T=3 and T=4. In this scenario consider which T# is most common or stable for your phage family type or bps length, based on literature. If literature review doesn't help determine the best T# for you, consider setting up all possible versions for visualisation and observational review.
    - The type of DNA/RNA your phage has will also help to define its size, with dsDNA requiring a higher T# to support a larger genome.
    - Phage capsid size and proteomics can also help define. See more in supplementary documents folder.
    - See [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pubmed.ncbi.nlm.nih.gov/33302408/) for more information on how these sizes were defined. 
