@@ -93,9 +93,9 @@ Using the CK Theory of viral symmetry:
 
 1. Define your T-number (T#)
 
-   Using your genome length, define your T# using the parameters below (Luque et al., 2020). Main sizes for icosahedral symmetry, access more quasi-symmetry capsid sizes and associated lattice types in supplementary document folder.
+   Taking your genome length, define your T# using the predicted parameters below (Luque et al., 2020). Main sizes for icosahedral symmetry, access more quasi-symmetry capsid T# and associated lattice types in supplementary document folder. If already known, move to step 1 part 2.
 
-   Sizes defined by the following where G is your genome length, T is your T#, and D is your capsids diameter:
+   Sizes defined by the following where G is your genome length, T is your T#, and D is capsid diameter:
 <br><br>
 <p align="center">
    $$G(T) = a_G T^{b_G}$$    where    $$D(T) = a_D T^{b_D}$$
@@ -126,7 +126,7 @@ Using the CK Theory of viral symmetry:
    - T#s can overlap in genome size and bps number e.g. T=3 and T=4. In this scenario consider which T# is most common or stable for your phage family type or bps length, based on literature. If literature review doesn't help determine the best T# for you, consider setting up all possible versions for visualisation and observational review.
    - The type of DNA/RNA your phage has will also help to define its size, with dsDNA requiring a higher T# to support a larger genome.
    - Phage capsid size and proteomics can also help define. See more in supplementary documents folder.
-   - See [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pubmed.ncbi.nlm.nih.gov/33302408/) for more information on how these sizes were defined. 
+   - T# predictions made using allometric statistical model of 3348 isolated tailed phages and 1496 gut metagenome-assembled tailed phage genomes, based on the analysis of 23 known phages conserved structures and physical characteristics confirmed by cryo-map (Luque et al., 2020) See [The Missing Tailed Phages: Prediction of Small Capsid Candidates](https://pubmed.ncbi.nlm.nih.gov/33302408/). 
 <br><br>
 
 2. Define your T# parameters for use in simulation.
