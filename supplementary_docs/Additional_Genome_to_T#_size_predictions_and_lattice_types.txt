@@ -1,0 +1,37 @@
+##TABLE 1: Genome length proportional to T# predictions - addition T# and lattice types (Luque et al., 2020)
+ 
+   | T#          | lower limit (bps)  | Upper limit (bps) | Lattice type       |        
+   |-------------|--------------------| ------------------| -------------------|       
+   | 1.33        | 2030.8             | 6281.7            | trihexagonal       |
+   | 2.33        | 5287.9             | 12519.6           | snub hexagonal     |
+   | 2.49        | 5899.5             | 13554.6           | rhombitrihexagonal |
+   | 5.33        | 21402.5            | 35220.0           |                    |
+   | 7.46        | 37180.5            | 54508.8           |                    |
+   | 9.33        | 52965.2            | 73854.5           |                    |
+   | 9.95        | 58459.9            | 80824.2           |                    |
+   | 16.33       | 118786.8           | 170888.5          |                    |
+   | 17.33       | 128625.4           | 187970.2          |                    |
+   | 17.41       | 129445.1           | 189420.8          |                    |
+   | 21.33       | 168872.2           | 263750.2          |                    |
+   | 22.39       | 179763.5           | 285731.1          |                    |
+   | 25.33       | 210516.0           | 350806.2          |                    |
+   | 29.85       | 259194.6           | 462010.7          |                    |
+   | 30.33       | 264420.6           | 474497.6          |                    |
+   | 31          | 271754.4           | 492190.7          |                    |
+   | 32.34       | 286644.5           | 528710.6          |                    |
+   | 33.33       | 297680.8           | 556281.6          |                    |
+   | 36          | 327785.1           | 633580.9          |                    |
+   | 37          | 339199.8           | 663663.5          |                    |
+   | 37.33       | 343019.6           | 673822.3          |                    |
+   | 39          | 362227.7           | 725593.6          |                    |
+   | 39.80       | 371610.6           | 751291.7          |                    |
+
+   Notes:
+   - T# predictions made using allometric statistical model of 3348 isolated tailed phages and 1496 gut metagenome-assembled tailed phage genomes, based on the analysis of 23 known phages conserved structures and physical characteristics confirmed by cryo-map (Luque et al., 2020) See The Missing Tailed Phages: Prediction of Small Capsid Candidates, https://pubmed.ncbi.nlm.nih.gov/33302408/.  
+   - T#s can overlap in genome size and bps number e.g. T=3 and T=4. In this scenario consider which T# is most common or stable for your phage family type or bps length, based on literature. If literature review doesn't help determine the best T# for you, consider setting up all possible versions for visualisation and observational review.
+   - The type of DNA/RNA your phage has will also help to define its size, with dsDNA requiring a higher T# to support a larger genome.
+   - Phage capsid size and proteomics can also help define. See more in supplementary documents folder.
+   
+   Reference:
+   Luque, A., Benler, S., Lee, D. Y., Brown, C., & White, S. (2020). The Missing Tailed Phages: Prediction of Small Capsid Candidates. Microorganisms, 8(12), 1944. https://doi.org/10.3390/microorganisms8121944
+
