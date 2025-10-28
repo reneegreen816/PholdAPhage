@@ -1,6 +1,8 @@
 <h1>PholdAPhage: Assemble unknown phage particles one protein at a time</h1>
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17216762.svg)](https://doi.org/10.5281/zenodo.17216762)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/reneegreen816/PholdAPhage/CapsiCode_Cracker.ipynb)
+
 
 <p align="center"> 
   <img width=35% height=auto alt="image Phages being folded" src="https://github.com/user-attachments/assets/5eac2c23-ecb9-48d6-9bc2-ec433d377eea" />
@@ -85,12 +87,15 @@ Using the CK Theory of viral symmetry:
 <h3><mark>Pre-simulation needs</mark></h3>
 
 - You will need to know you phage genome length.
-- You will need your phage genome annotated and proteins folded for use. To do this, visit [Pharokka](https://github.com/gbouras13/pharokka), [Phold](https://github.com/gbouras13/phold), [Phynteny](https://github.com/susiegriggo/Phynteny) for genome annotation and protein identification. For the full process access the [notebook](https://colab.research.google.com/github/gbouras13/phold/blob/main/run_pharokka_and_phold_and_phynteny.ipynb). Then visit [AlphaFold2](https://github.com/google-deepmind/alphafold) and [ColabFold](https://github.com/sokrypton/ColabFold) for protein folding.
+- You will need your phage genome annotated and proteins folded for use. To do this, visit [Pharokka](https://github.com/gbouras13/pharokka), [Phold](https://github.com/gbouras13/phold), [Phynteny](https://github.com/susiegriggo/Phynteny) for genome annotation and protein identification. For the full process access the [notebook](https://colab.research.google.com/github/gbouras13/phold/blob/main/run_pharokka_and_phold_and_phynteny.ipynb). Visit [AlphaFold2](https://github.com/google-deepmind/alphafold) and [ColabFold](https://github.com/sokrypton/ColabFold) for protein folding.
 - Have a possible understanding of asymmetric unit structure, if your predicting a model larger than a T#=1 capsid size. 
 - Have downloaded UCSF ChimeraX to your working computer.
 <br><br>
+
 <h3><mark>STEP 1 - Define your unknown phage T# and protein copy number</mark></h3>
 
+For help in defining your T# and h,k parameters, you can run the [CapsiCode Cracker notebook in Colab](https://colab.research.google.com/github/reneegreen816/PholdAPhage/CapsiCode_Cracker.ipynb), or define individually by working through the process below. 
+<br><br>
 1. Define your T-number (T#)
 
    Taking your genome length, define your T# using the predicted parameters below (Luque et al., 2020). Main sizes for icosahedral symmetry, access more quasi-symmetry capsid T# and associated lattice types in supplementary document folder. If already known, move to step 1 part 2.
@@ -107,19 +112,19 @@ Using the CK Theory of viral symmetry:
   
    | T#          | lower limit (bps)  | Upper limit (bps) |        
    |-------------|--------------------| ------------------|          
-   | 1           | 1240.2             | 4412.2            |
-   | 3           | 8112.2             | 17095.3           |
-   | 4           | 13207.2            | 24480.7           |
-   | 7           | 33507.9            | 50072.7           |
-   | 9           | 50052.7            | 70221.0           |
-   | 12          | 77248.3            | 106077.8          |
-   | 13          | 86659.6            | 119668.7          |
-   | 16          | 115527.2           | 165366.7          |
-   | 19          | 145222.1           | 218122.7          |
-   | 21          | 165464.2           | 256993.8          |
-   | 25          | 206993.9           | 343138.2          |
-   | 27          | 228263.3           | 390244.3          |
-   | 28          | 239019.2           | 414775.1          |
+   | 1           | 1,240               | 4,412              |
+   | 3           | 8,112               | 17,095             |
+   | 4           | 13,207              | 24,480             |
+   | 7           | 33,507              | 50,072             |
+   | 9           | 50,052              | 70,221             |
+   | 12          | 77,248              | 106,077            |
+   | 13          | 86,659              | 119,668            |
+   | 16          | 115,527             | 165,366            |
+   | 19          | 145,222             | 218,122            |
+   | 21          | 165,464             | 256,993            |
+   | 25          | 206,993             | 343,138            |
+   | 27          | 228,263             | 390,244            |
+   | 28          | 239,019             | 414,775            |
 </div>
   
    Note: 
@@ -233,7 +238,7 @@ Using the CK Theory of viral symmetry:
 
    Tip:
      - It will help with placement if you have some understanding of your proteins orientation or oligomeric state.
-     - If you capsid structure is greater than a T=1, then you will need to place your asymmetric unit, or if separate, your required number of proteins in the hexamer also to enable simulation. i.e - if a T=1 then just the pentamer, if T=2 then one protein in the pentamer and 1 in the hexamer, or T=3 then 1 in pentamer and 2 in the hexamer, and so on.
+     - If your capsid structure is greater than a T=1, then you will need to place your asymmetric unit, or if separate, your required number of proteins in the hexamer also to enable simulation. i.e - if a T=1 then just the pentamer, if T=2 then one protein in the pentamer and 1 in the hexamer, or T=3 then 1 in pentamer and 2 in the hexamer, and so on.
 
 <p align="center">
 <img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/2d60448e-31b3-4ea5-a09d-b215a82de5d7" />
@@ -309,11 +314,11 @@ Molecular graphics images were produced using the UCSF ChimeraX package from the
 
 If you use **PholdAPhage**, I would recommend a citation in your manuscript along the lines of:
 
-All predictive modelling of phages were done using the PholdAPhage predictive modelling protocol (Green, R. G. (2025), **PholdAPhage**: [https://github.com/reneegreen816/PholdAPhage](https://github.com/reneegreen816/PholdAPhage/edit/main/README.md) ). 
+All predictive modelling of phages were done using the PholdAPhage predictive modelling protocol (Green, R (2025), **PholdAPhage**: [https://github.com/reneegreen816/PholdAPhage](https://github.com/reneegreen816/PholdAPhage/edit/main/README.md) ). 
  
 Is you use Pharokka, Phold, Phynteny, or AlphaFold2 and collabfold for pre-simulation needs, it would be recommended to also include:
 
-Genome annotations completed with Pharokka V1.8.0 (Bouras, et al. 2023),  Phold V1 (Bouras, et al. 2025), and Phynteny (Grigson, et al 2025). Folds completed with AlphaFold2, with oligomeric predictions completed with Phlegm (Grigson, et al 2025). Predictive modelling and simulation completed by UCSF ChimeraX package and sym command tools by the Computer Graphics Laboratory, University of California, San Francisco, and UCSF ChimeraX package hkcage command by Luque Lab at San Diego State University, with funding from the NSF.
+Genome annotations completed with Pharokka V1.8.0 (Bouras, et al. 2023),  Phold V1 (Bouras, et al. 2025), and Phynteny (Grigson, et al 2025). Folds completed with AlphaFold2. Predictive modelling and simulation completed by UCSF ChimeraX package and sym command tools by the Computer Graphics Laboratory, University of California, San Francisco, and UCSF ChimeraX package hkcage command by Luque Lab at San Diego State University, with funding from the NSF.
 
 With the following full citations for the constituent tools below where relevant:
 
