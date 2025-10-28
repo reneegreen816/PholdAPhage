@@ -1,7 +1,7 @@
 <h1>PholdAPhage: Assemble unknown phage particles one protein at a time</h1>
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17216762.svg)](https://doi.org/10.5281/zenodo.17216762)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/reneegreen816/PholdAPhage/blob/main/PholdAPhage-CapsiCodeCracker.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/reneegreen816/PholdAPhage/blob/main/PholdAPhage_CapsiCodeCracker.ipynb)
 
 
 
@@ -95,8 +95,7 @@ Using the CK Theory of viral symmetry:
 
 <h3><mark>STEP 1 - Define your unknown phage T# and protein copy number</mark></h3>
 
-For help in defining your T# and h,k parameters, you can run the [CapsiCode Cracker notebook in Colab](https://colab.research.google.com/github/reneegreen816/PholdAPhage/blob/main/PholdAPhage-CapsiCodeCracker.ipynb
-), or define individually by working through the process below. 
+For help in defining your T# and h,k parameters, you can run the [CapsiCode Cracker notebook in Colab](https://colab.research.google.com/github/reneegreen816/PholdAPhage/blob/main/PholdAPhage_CapsiCodeCracker.ipynb), or define individually by working through the process below. 
 <br><br>
 1. Define your T-number (T#)
 
