@@ -230,7 +230,7 @@ For help in defining your T# and h,k parameters, you can run the [CapsiCode Crac
 </p>
 <br><br>
 
-6. Place protein on your hkcage at site of one of the side axis of a pentagon to enable simulation.
+6. Place protein (or your assymetric unit) on your hkcage at site of one of the side axis of a pentagon to enable simulation. 
 
    This step is done manually using the right mouse tools located in the top main menu bar. To do this:
    - activate the protein in your model ID pane by checking the _green finger check box_ to select.
@@ -239,7 +239,7 @@ For help in defining your T# and h,k parameters, you can run the [CapsiCode Crac
 
    Tip:
      - It will help with placement if you have some understanding of your proteins orientation or oligomeric state.
-     - If your capsid structure is greater than a T=1, then you will need to place your asymmetric unit, or if separate, your required number of proteins in the hexamer also to enable simulation. i.e - if a T=1 then just the pentamer, if T=2 then one protein in the pentamer and 1 in the hexamer, or T=3 then 1 in pentamer and 2 in the hexamer, and so on.
+     - If your capsid structure is greater than a T=1, then you will need to place your asymmetric unit or a number of monomers that is a multiplication of 60 to enable proper simulation across the pentamer and hexamer. i.e - if a T=1 with 60 protein copies numbers beeded just place 1 in the pentamer, if T=3 then one protein in the pentamer and 2 in the hexamer to simulate 180, and so on. 60 units including and associated to the major capsid protein unit, not other sstructural proteins.
 
 <p align="center">
 <img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/2d60448e-31b3-4ea5-a09d-b215a82de5d7" />
