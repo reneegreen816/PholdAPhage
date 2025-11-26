@@ -191,7 +191,7 @@ For help in defining your T# and h,k parameters, you can run the [CapsiCode Crac
 <img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/7f9c7ada-7bc8-422d-bca0-8d5722cf951e" />
 </p>
 <p align="center">
-  Figure 4: View of Protein 1CD3 opened in ChimeraX, acessed from PDB Data Bank.
+  Figure 4: View of Protein 1CD3 opened in ChimeraX, accessed from PDB Data Bank.
 </p>
 <br><br>
 
