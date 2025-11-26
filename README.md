@@ -239,7 +239,7 @@ For help in defining your T# and h,k parameters, you can run the [CapsiCode Crac
 
    Tip:
      - It will help with placement if you have some understanding of your proteins orientation or oligomeric state.
-     - If your capsid structure is greater than a T=1, then you will need to place your asymmetric unit or a number of monomers that is a multiplication of 60 to enable proper simulation across the pentamer and hexamer. i.e - if a T=1 with 60 protein copies numbers beeded just place 1 in the pentamer, if T=3 then one protein in the pentamer and 2 in the hexamer to simulate 180, and so on. 60 units including and associated to the major capsid protein unit, not other sstructural proteins.
+     - If your capsid structure is greater than a T=1, then you will need to place your asymmetric unit or a number of monomers that is a multiplication of 60 to enable proper simulation across the pentamer and hexamer. i.e - if a T=1 with 60 protein copies numbers beeded just place 1 in the pentamer, if T=3 then one protein in the pentamer and 2 in the hexamer to simulate 180, and so on. 60 units including and associated to the major capsid protein unit, not other structural proteins.
 
 <p align="center">
 <img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/2d60448e-31b3-4ea5-a09d-b215a82de5d7" />
