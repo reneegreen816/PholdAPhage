@@ -172,6 +172,8 @@ For help in defining your T# and h,k parameters, you can run the [CapsiCode Crac
 <br><br>
 <h3><mark>STEP 2 - Simulate your phage structure in UCSF ChimeraX</mark></h3>
 
+<mark>Watch this space - The new PholdAPhage bioautomation hub is coming soon!</mark> This hub will help in automating the development of your phage structure. In the meantime, use the instructions below to simulate your phage structure.
+
    _Follow instructions below using test case_
 
 1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install
