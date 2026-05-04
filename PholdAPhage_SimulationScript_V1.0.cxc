@@ -1,0 +1,137 @@
+
+#### _____________________ PholdAPhage_ChimeraX_code_Simulation_automation __________________________ ####
+
+# Instructions:
+# Input defined hkcage h,k paramters from Step 1 PholdAPhage protocol. If not known, use available CapsiCode Cracker notebook in Colab on Github.
+# Update hkcage command parameters including radius, orientation, lattice type and color (alpha). Sphere factor can be used for spherical level with 0.0 being 100% icosahedral in shape and 1.0 being fully spherical. 
+# Once hkcgae is defined, update apex coordinates, import protein (or assymetric unit), position using x,y,z coordinates and sym, by modifying below command lines as needed. 
+# Once complete this script will automatically simulate your phage capsid, and save both your ChimeraX session and png of your phage to your desktop. From here, continue to add additional syms, and proteins as required using step 2 of the PholdAPhage protocol.
+
+
+# Notes:
+# Wait command support visual “build-up" via time lapse. Change numbers to speed up/slow down simulation development.
+# Echo command indicates initiation and completion of each step. Enables troublshooting.
+# Further protein positioning steps available, currently commented out. Remove the hashtag and update coordinates to provide further changes as needed. 
+# Example simulation can be run using the below code for PDBBank 1CD3 - PhiX174 phage assymetric unit
+
+
+#### _______________________________________________________________________________________________ ####
+
+
+####---Start_script---####
+
+# Start of script
+echo "✅ Script started"
+
+wait 30
+
+#### --- Set up HKCage and pentamer apex requirements --- ####
+
+# Step 1: Create hkcage (requirements defined in Step 1 of protocol)
+hkcage 1 0 radius 120.0 edgeRadius 0.5 orientation 222 sphereFactor 0.0 alpha hexagonal color white
+echo "✅ HK cage created"
+
+wait 30
+
+# Step 2: Define capsid/hkcage axes (to support orientation)
+open ~/Downloads/XYZ-axes.bild
+echo "✅ Axes created successfully"
+
+wait 30
+
+# Step 3: Create hkcage apex marker using x,y,z coordinates (align z-axis coordinates with hkcage radius)
+shape sphere center 0,0,100 radius 4 color white
+echo "✅ Apex marker created successfully"
+
+wait 30
+
+# Step 4: Define and create hkcage pentamer apex marker using x,y,z coordinates (align z-axis coordinates with hkcage radius, make y-axis ~70% of z-axis, leave x-axis = 0)
+shape sphere center 0,47,80 radius 4 color red
+echo "✅ Pentamer apex marker created successfully"
+
+wait 30 
+
+#### --- Open protein pdb --- ####
+
+# Step 5: Open protein pdb (use 'open ~/Desktop/.../file_location/file_name.pdb' for local files)
+open 1CD3
+echo "✅ PDB protein opened successfully"
+
+wait 30
+
+####--- Apply protein styles ---####
+
+# Step 6: Apply protein visulation style - cartoon (modify based on need)
+hide #5 Atoms 
+show #5 Cartoons
+echo "✅ Cartoon applied"
+
+wait 30
+
+# Step 7: Apply color by chain (modify based off need. For AlphaFold ITPM confidence level color palette use 'color bfactor palette alphafold')
+color bychain ALL
+echo "✅ Color applied"
+
+wait 30
+
+####--- Move protein to pentamer apex ---####
+
+# Step X: Turn protein on x-axis
+# move x 20 models #5
+# echo "✅ Protein moved on x-axis"
+
+#wait 30
+
+# Step X: Move protein on z-axis to hkcage apex
+# move z 90 models #5
+# echo "✅ Protein moved on z-axis to the hkcage apex"
+
+#wait 30
+
+# Step X: Move protein on y-axis to hkcage pentamer apex
+# move y 10 models #5
+# echo "✅ Protein moved on y-axis to hkcage pentamer apex"
+
+#wait 30
+
+# Step 8: Turn protein on z-axis
+turn z 75 models #5
+echo "✅ Protein turn on z-axis"
+
+#wait 30
+
+# Step X: Turn protein on x-axis
+# turn x 5 models #5
+# echo "✅ Protein turn on x-axis"
+
+wait 30
+
+####--- Create protein simulation across hkcage ---####
+
+# Step 9: Create sym of protein
+sym #5 #1 i,222
+echo "✅ Sym applied"
+
+wait 30
+
+####--- Zoom out to fit model on screen ---####
+
+# Step 10: Fit model to screen
+view
+echo "✅ Fit to screen complete"
+
+
+####--- Save session and high-res image to desktop ---####
+
+# Step 11: Save session.cxc
+# Save session
+# echo "✅ Saved ~/Desktop/my_session.cxs
+
+# Step 12: Save session.png
+# save ~/Desktop/my_image.png width 1920 height 1080 supersample 3
+# echo "✅ Saved ~/Desktop/my_session.png "
+
+####--- End script ---####
+
+# End of script
+echo "✅ Script finished"
