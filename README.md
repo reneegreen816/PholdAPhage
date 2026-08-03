@@ -179,12 +179,12 @@ For help in defining your T# and h,k parameters, you can run the [CapsiCode Crac
    
 Update the file with your capsid parameters gained in Step one and run through terminal using command line /Applications/your_ChimeraX_version.app/Contents/MacOS/ChimeraX --script ~/file/path/to/your/saved/script/PholdAPhage_SimulationScript_V1.0.cxc
 
-   _Use the instructioins below using test case_
+   _Use the instructions below using test case_
 
 
 1. If you don't have ChimeraX installed, download the [latest copy](https://www.cgl.ucsf.edu/chimerax/download.html) and install
 2. Open ChimeraX
-3. Open your capsid protein .pdb file 
+3. Open your capsid protein .pdb file (or .cif file) 
 
 ```bash
    open 1CD3
