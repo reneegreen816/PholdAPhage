@@ -6,7 +6,7 @@
 
 
 <p align="center"> 
-  <img width=35% height=auto alt="image Phages being folded" src="https://github.com/user-attachments/assets/5eac2c23-ecb9-48d6-9bc2-ec433d377eea" />
+  <img width=40% height=auto alt="PholdAPhagelogo" src="https://github.com/user-attachments/assets/13b92bc0-66f4-4d04-995b-82c065d7627f" />
 </p>
 
 **_PholdAPhage_** is a predictive modelling tool for the quick, efficient visualisation of unknown phage structures for experimental baseline. Traditional wet lab experiments to define protein morphology are time consuming and expensive. PholdAPhage supports the three dimensional reconstruction of unknown phage structures, utilising genome annotation, protein folding, and oligomeric state predictions, for predictive simulation by UCSF ChimeraX. 
@@ -43,28 +43,26 @@ Phage capsid structures are highly conserved, 96% are icosahedral in nature appl
 
 <p align="center"><strong>Icosahedral lattice symmetry types</strong></p>
 <p align="center">
-<img width=60% height=auto alt="image" src="https://github.com/user-attachments/assets/7fa14d17-31ab-4bb2-a8e7-650c98bc8568" />
+<img width=75% height=auto alt="Lattice_symmetry" src="https://github.com/user-attachments/assets/3ef21a7d-0d7a-4db1-bc34-496db46a4b01" />
 </p>
 <p align="center">
-  Figure 1: Example of differing icosahedral lattices employing the theory of viral symmetry for T=7 phage capsids in support of increased capsid size (Luque et al., 2020).
+  Figure 1: Example of differing icosahedral lattices employing the theory of viral symmetry for T=1 phage capsids in support of increased capsid size. Image adapted from Luque et al., 2020.
 </p>
 <br><br>
 
 <p align="center"><strong>Casper-Klug (CK) Theory</strong></p>
 
 <p align="center"> 
-  <img width=80% height=auto alt="image Casper-Klug formula" src="https://github.com/user-attachments/assets/3fce8eaa-7787-44c4-8c60-4c9758d3f2f4" />
+<img width=65% height=auto alt="Casper-Klug formula" src="https://github.com/user-attachments/assets/008ba280-0342-42df-a843-10d7f40a9abe" />
 </p>
 <p align="center">
-  Figure 2: Casper-Klug (CK) Theory and formula for viral symmetry to determine T# and capsid protein copy number. The theory is built on 60 identical subunits organized across 20 triangles which create the faces of the icosahedral shape (Comas-Garcia, 2024; SIB Swiss Institute of Bioinformatics - Viral Zone, 2025)
+  Figure 2: Casper-Klug (CK) Theory and formula for viral symmetry to determine T# and capsid protein copy number. The theory is built on 60 identical subunits organised across 20 triangles which create the faces of the icosahedral shape. Image adapted from SIB Swiss Institute of Bioinformatics - Viral Zone, 2025.
 </p>
-<br><br>
-<p align="center"> 
-  <img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/37a6e261-9376-4664-9297-3251189a4de7" />
-</p>
-
 <p align="center">
-  Figure 3: T# defined by CK formula (h, k) parameters for capsid pentagon location for symmetry and lattice type. h and k being non negative integers used to define the number of units in a straight line from one pentagon to another, before shifting left or right to reach the next pentagon.  (Comas-Garcia, 2024; SIB Swiss Institute of Bioinformatics - Viral Zone, 2025)
+<img width=35% height=auto alt="Dextro_levo" src="https://github.com/user-attachments/assets/97bc5564-c71a-4abb-bbc5-802c79d163b5" />
+</p>
+<p align="center">
+  Figure 3: T# defined by CK formula (h, k) parameters for capsid pentagon location for symmetry and lattice type. h and k being non negative integers used to define the number of units in a straight line from one pentagon to another, before shifting left or right to reach the next pentagon. Image adapted from SIB Swiss Institute of Bioinformatics - Viral Zone, 2025.
 </p>
 <br><br>
 
@@ -74,9 +72,12 @@ Example: A phage genome length of ~5,000bps is typical to a phage capsid T# of 1
 <h2>Method overview</h2>
 
 <p align="center"> 
-<img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/afa32bef-c882-4d93-8df1-3cbc00365483" />
+<img width=80% height=auto alt="PholdAPhageFramework" src="https://github.com/user-attachments/assets/36db7972-e802-4230-814f-5577ad65f693" />
 </p>
-
+<p align="center">
+  Figure 4: Overview of the PholdAPhage framework. Made in BioRender
+</p>
+<br><br>
 
 Using the CK Theory of viral symmetry:
 - Step 1: defines your phage's capsid T# by using the Genome-to-T-number model.
@@ -85,7 +86,7 @@ Using the CK Theory of viral symmetry:
 
 <h2>How to simulate your unknown phage</h2>
 
-<h3><mark>Pre-simulation needs</mark></h3>
+<h3><mark>STEP 1 - Protein identification and analysis</mark></h3>
 
 - You will need to know you phage genome length.
 - You will need your phage genome annotated and proteins folded for use. To do this, visit [Pharokka](https://github.com/gbouras13/pharokka), [Phold](https://github.com/gbouras13/phold), [Phynteny](https://github.com/susiegriggo/Phynteny) for genome annotation and protein identification. For the full process access the [notebook](https://colab.research.google.com/github/gbouras13/phold/blob/main/run_pharokka_and_phold_and_phynteny.ipynb). Visit [AlphaFold2](https://github.com/google-deepmind/alphafold) and [ColabFold](https://github.com/sokrypton/ColabFold) for protein folding.
@@ -93,7 +94,7 @@ Using the CK Theory of viral symmetry:
 - Have downloaded UCSF ChimeraX to your working computer.
 <br><br>
 
-<h3><mark>STEP 1 - Define your unknown phage T# and protein copy number</mark></h3>
+<h3><mark>STEP 2 - Define your unknown phage T# and protein copy number</mark></h3>
 
 For help in defining your T# and h,k parameters, you can run the [CapsiCode Cracker notebook in Colab](https://colab.research.google.com/github/reneegreen816/PholdAPhage/blob/main/PholdAPhage_CapsiCodeCracker.ipynb), or define individually by working through the process below. 
 <br><br>
@@ -170,7 +171,7 @@ For help in defining your T# and h,k parameters, you can run the [CapsiCode Crac
 
    Based off this thinking, use your T# to determine how identical units you will see when creating your sym in ChimeraX. 
 <br><br>
-<h3><mark>STEP 2 - Simulate your phage structure in UCSF ChimeraX</mark></h3>
+<h3><mark>STEP 3 - Simulate your phage structure in UCSF ChimeraX</mark></h3>
 
 <mark>Watch this space - A new PholdAPhage automation hub is coming!</mark> This hub will help in automating the creation of your phage structure. In the meantime, use the instructions below to simulate your phage, or use the **PholdAPhage_SimulationScript_V1.0.cxc** script loaded as a supplementary document. 
 
@@ -196,7 +197,8 @@ Update the file with your capsid parameters gained in Step one and run through t
    - Multiple proteins can be open in the same working file, at the same time.
 
 <p align="center">
-<img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/7f9c7ada-7bc8-422d-bca0-8d5722cf951e" />
+<img width=30% height=auto alt="Assymetric_unit" src="https://github.com/user-attachments/assets/796086c4-5753-4c4c-a9ff-4cdb27bc32e4" />
+
 </p>
 <p align="center">
   Figure 4: View of Protein 1CD3 opened in ChimeraX, accessed from PDB Data Bank.
@@ -221,7 +223,7 @@ Update the file with your capsid parameters gained in Step one and run through t
 
    Where:
    - **hkcage (h,k)** is your defined parameters for your T# e.g. _hkcage 1 0_ sets up a T=1 capsid size based on (h,k)=h2+hk+k2. See above. 
-   - **Radius** increases and decreases size of the hkcage to support your surface area, density and protein size needs. If wanting to increase size, reuse the same command line as above but include _replace true_ at the end to overwrite the initial hkcage structure. Default size 120.0. Notes: ChimeraX works in Angstroms for physical distance units.
+   - **Radius** increases and decreases the size of the hkcage to support your surface area, density and protein size needs. If wanting to increase size, reuse the same command line as above but include _replace true_ at the end to overwrite the initial hkcage structure. Default size 120.0. Notes: ChimeraX works in Angstroms for physical distance units.
    - **Edge radius** how thick you want your hkcage axis to be. Default 0.5.
    - **Orientation** determines your symmetry type i.e. 222 for icosahedral symmetry with 2 fold symmetry at the x, y and z axis. Default 222.
    - **Sphere factor** determines how ‘spherical’ you want the icosahedral shape, with 1.0 being the most spherical like, and 0.0 being most icosahedral like (i.e. can see where the pentagons fold for the icosahedral shape). 
@@ -231,7 +233,8 @@ Update the file with your capsid parameters gained in Step one and run through t
    For more information on the parameters you can change, visit [ChimeraX hkcage](https://www.cgl.ucsf.edu/chimerax/docs/user/commands/hkcage.html) and [UCSF ChimeraX User Guide](https://www.rbvi.ucsf.edu/chimerax/docs/user/index.html) 
 
 <p align="center">
-<img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/6fc77ce2-6b3f-450c-aff1-4c338b156ec0" />
+<img width=60% height=auto alt="hkcage1" src="https://github.com/user-attachments/assets/35671ef6-600f-4f3a-9239-3348251f5c51" />
+
 </p>
 <p align="center">
   Figure 5: hkcage development rendering of T=1 capsid shell using default command code. View of 2 different angles.
@@ -250,7 +253,7 @@ Update the file with your capsid parameters gained in Step one and run through t
      - If your capsid structure is greater than a T=1, then you will need to place your asymmetric unit or a number of monomers that is a multiplication of 60 to enable proper simulation across the pentamer and hexamer. i.e - if a T=1 with 60 protein copies numbers beeded just place 1 in the pentamer, if T=3 then one protein in the pentamer and 2 in the hexamer to simulate 180, and so on. 60 units including and associated to the major capsid protein unit, not other structural proteins.
 
 <p align="center">
-<img width=80% height=auto alt="image" src="https://github.com/user-attachments/assets/2d60448e-31b3-4ea5-a09d-b215a82de5d7" />
+<img width=60% height=auto alt="Hkcageplacement" src="https://github.com/user-attachments/assets/6be42382-f1bd-44b9-8cf1-dd7e5bec64b5" />
 </p>
 <p align="center">
   Figure 6: protein placement of 1CD3 assymetric unit on T=1 hkcage pentamer axis to enable simulation. LHS - top down view of 1CD3 on the T=1 hkcage, RHS - side view of 1CD3 T=1 hkcage protein placement.
@@ -276,7 +279,8 @@ Tip/s and notes:
    - Sym's can take time to process and set-up by your computer. It is not unusual for it to take a few mins for the sym to show.
 
 <p align="center">
-<img width="748" height="243" alt="image" src="https://github.com/user-attachments/assets/b8637622-6a8a-42cc-86f5-74bcc216086e" />
+<img width=50% height=auto alt="Full_PhiX174" src="https://github.com/user-attachments/assets/483f4341-0221-474b-b406-05c183f85415" />
+
 </p>
 <p align="center">
   Figure 7: 1CD3 protein assymetric unit simulated across the T=1 hkcage. LHS - pentamer face view, RHS pentamer view side on.
